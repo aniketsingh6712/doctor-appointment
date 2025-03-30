@@ -19,7 +19,9 @@ p%40ssw0rd%279%27%21
 mongoose.connect(mongoURI)
 .then(() => console.log("CONNECTED TO MONGODB!"))
 .catch((err) => console.error("FAILED to CONNECT TO MONGODB:", err));
-
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully!");
+});
 app.use("/doctor-appointment", DoctorRecordRouter);//doctor and user records
 app.use("/appointment-record",AppointmentRecordRouter);//for appointment and ending session 
 app.use("/review-record",ReviewRecordRouter);//doctors reviews and session reviews
