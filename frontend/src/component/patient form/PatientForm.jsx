@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {auth} from "../../firebase/firebase-config";
+const API_URL = import.meta.env.VITE_API_URL;
 const ProgressBar = ({ step, steps }) => {
   
     return (
@@ -79,7 +80,7 @@ const newFormData={docId:Doctordata.id,docname:Doctordata.name,docdesign:Doctord
 email: formData.email,fees:Doctordata.price,date: formData.date,time: formData.time,age:  formData.age,
 gender:formData.gender,emergency_contact_name: formData.emergency_name,emergency_contact_phone:formData.emergency_phone}
 try {
-  const response = await fetch("http://localhost:3001/appointment-record/send/appointment-record", {
+  const response = await fetch(`${API_URL}/appointment-record/send/appointment-record`, {
     method: "POST",
     body: JSON.stringify(newFormData),
     headers: {
