@@ -4,11 +4,12 @@ import React, { useState,useEffect } from 'react'
 import { auth } from '../../firebase/firebase-config';
 import AppointmentTable from './AppoinmentTable';
 import { HeroSection } from '../../component/Home/Home';
+const API_URL = import.meta.env.VITE_API_URL;
 function User_Appointment() {
     const [appointmentData,setAppointmentData]=useState([]);
     const getDoctorinfo=async ()=>{
         try {
-          const response = await fetch(`http://localhost:3001/appointment-record/fetch/appointment-record/user/${auth?.currentUser?.uid}`, {
+          const response = await fetch(`${API_URL}/appointment-record/fetch/appointment-record/user/${auth?.currentUser?.uid}`, {
             method: "GET", // Change to GET
             headers: {
               "Content-Type": "application/json",
