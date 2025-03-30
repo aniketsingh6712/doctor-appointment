@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 import { Rating } from "@mui/material";
 //user previous appointment data with review button
+const API_URL = import.meta.env.VITE_API_URL;
 export const PatientCard = ({ patients }) => {
   const [open, setOpen] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -22,7 +23,7 @@ export const PatientCard = ({ patients }) => {
     console.log("Review:", review, "Rating:", rating);
    const newData={docId:selectedPatient.docId,docname:selectedPatient.docname,docdesign:selectedPatient.docdesign,review:review,rating:rating}
     try {
-        const response = await fetch("http://localhost:3001/review-record/send/review", {
+        const response = await fetch(`${API_URL/review-record/send/review`, {
           method: "POST",
           body: JSON.stringify(newData),
           headers: {
