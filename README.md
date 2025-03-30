@@ -143,6 +143,18 @@
   - Supports **Light/Dark mode** via React Context.  
 
   ### 🖼 Screenshots  
+![Screenshot (118)](https://github.com/user-attachments/assets/4d34213a-733f-48e7-bcfe-558460fad401)
+![Screenshot (119)](https://github.com/user-attachments/assets/7aef6dfa-1e9d-4328-9951-8276b0a6e5f4)
+![Screenshot (120)](https://github.com/user-attachments/assets/8fc26c01-8c2c-49bd-894f-1a5c9bb20e9c)
+![Screenshot (121)](https://github.com/user-attachments/assets/79c72760-4d01-49ae-9d99-4a5e9c3a121d)
+![Screenshot (122)](https://github.com/user-attachments/assets/4e5c2292-dda2-4b08-bbb1-54ffcf7bbc1f)
+![Screenshot (123)](https://github.com/user-attachments/assets/b0b880f3-a042-473c-b797-1d52001fdb32)
+![Screenshot (125)](https://github.com/user-attachments/assets/0d40d49a-3618-4b46-a290-d433a370a683)
+![Screenshot (127)](https://github.com/user-attachments/assets/b91856ae-5320-4e1e-8578-22475496f439)
+![Screenshot (128)](https://github.com/user-attachments/assets/58ffbab6-092c-46ec-92c6-2cc663d5ab28)
+![Screenshot (129)](https://github.com/user-attachments/assets/7c2780dc-9220-4b7b-89a5-1c6d7a061deb)
+![Screenshot (130)](https://github.com/user-attachments/assets/b39c7a86-fc21-467f-86d7-b712ebbaf151)
+
 
 
   ---
