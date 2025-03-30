@@ -6,6 +6,7 @@ import { useSelector ,useDispatch} from "react-redux";
 import EditableTable from "./profile_settings";
 import { UpdateUser } from "../../redux/userslicer";
 import DoctorPreviousAppointment from "../../appointment/previous appointment/doctor";
+const API_URL = import.meta.env.VITE_API_URL;
 const Key_details_form=()=>{
   const User = useSelector((state) => state.user.data);
   const [formData, setFormData] = useState({ fees: "", speciality: "" });
@@ -31,7 +32,7 @@ const Key_details_form=()=>{
     const newData={userId:auth?.currentUser.uid,user:User[0].user,fees:formData.fees,speciality:formData.speciality};
   
     try {
-      const response = await fetch("http://localhost:3001/doctor-appointment/doctor-key-details", {
+      const response = await fetch(`${API_URL}/doctor-appointment/doctor-key-details`, {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {
@@ -102,7 +103,7 @@ export default function DoctorSideBar() {
   const dispatch=useDispatch();
   const getDoctorinfo=async ()=>{
     try {
-      const response = await fetch(`http://localhost:3001/doctor-appointment/doctor-key-details/${auth?.currentUser.uid}`, {
+      const response = await fetch(`${API_URL}/doctor-appointment/doctor-key-details/${auth?.currentUser.uid}`, {
         method: "GET", // Change to GET
         headers: {
           "Content-Type": "application/json",
@@ -134,7 +135,7 @@ export default function DoctorSideBar() {
   /***-----------------user update in mongodb and redux store */
   const UpdateUserinDbandStore=async (NewData)=>{
      
-        const response = await fetch(`http://localhost:3001/doctor-appointment/doctor-update/${NewData._id}`, {
+        const response = await fetch(`${API_URL}/doctor-appointment/doctor-update/${NewData._id}`, {
           method: "PUT",
           body: JSON.stringify(NewData),
           headers: {
