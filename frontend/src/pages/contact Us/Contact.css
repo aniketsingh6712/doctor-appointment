@@ -1,0 +1,35 @@
+/* Global Styles */
+* {
+    font-family: 'Franklin Gothic Book', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-height: fit-content;
+}
+
+.form-container {
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 600px;
+    margin: 20px;
+    max-height: fit-content;
+}
+
+h1 {
+    color: rgb(130, 159, 185);
+    font-weight: 700;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+}

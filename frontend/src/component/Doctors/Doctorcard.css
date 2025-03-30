@@ -1,0 +1,102 @@
+.doctor-card {
+    display: flex;
+    gap: 16px;
+    max-width: 50vw;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    justify-content: space-between;
+    margin-top:4vh;
+  }
+  
+  
+  .profile-image img {
+    width: 10vw;
+    height: 20vh;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  
+  .doctor-details {
+    flex: 1;
+    width: 20vw;
+  }
+  
+  .doctor-details h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .doctor-details p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+  }
+  
+  .rating {
+    display: flex;
+    margin-top: 4px;
+  }
+  
+  .star-filled {
+    color: gold;
+  }
+  
+  .star-empty {
+    color: lightgray;
+  }
+  
+  .appointment-info {
+    text-align: right;
+  }
+  
+  .address {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin-top: 4px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  
+  .view-profile,
+  .book-appointment {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .view-profile {
+    background: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+  }
+  
+  .view-profile:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .book-appointment {
+    background: #28a745;
+    color: white;
+  }
+  
+  .book-appointment:hover {
+    background: #218838;
+  }
+  
