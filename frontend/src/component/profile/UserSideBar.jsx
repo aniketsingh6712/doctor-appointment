@@ -6,7 +6,7 @@ import EditableTable from "./profile_settings";
 import { UpdateUser } from "../../redux/userslicer";
 import UserPreviousAppointment from "../../appointment/previous appointment/user";
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 /***-----------------------------------------------------sidebar------------------------------- */
 export default function PatientSideBar() {
   const UserData = useSelector((state) => state.user.data);
@@ -20,7 +20,7 @@ export default function PatientSideBar() {
   /***-----------------user update in mongodb and redux store */
   const UpdateUserinDbandStore=async (NewData)=>{
      
-        const response = await fetch(`http://localhost:3001/doctor-appointment/user-update/${NewData._id}`, {
+        const response = await fetch(`${API_URL}/doctor-appointment/user-update/${NewData._id}`, {
           method: "PUT",
           body: JSON.stringify(NewData),
           headers: {
