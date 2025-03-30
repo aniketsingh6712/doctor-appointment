@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+const API_URL = import.meta.env.VITE_API_URL;
 const AppointmentTable = ({ data }) => {
     const [showModal, setShowModal] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -16,7 +17,7 @@ const AppointmentTable = ({ data }) => {
     setShowModal(true);
   };
   const deleteAppointment=async (id)=>{
-    const response=await fetch(`http://localhost:3001/appointment-record/delete/appointment-record/${id}`,{
+    const response=await fetch(`${API_URL}/appointment-record/delete/appointment-record/${id}`,{
       method: "DELETE",
     });
     try{
@@ -36,7 +37,7 @@ const AppointmentTable = ({ data }) => {
     setShowModal(false);
     const newFormData={...selectedPatient,issues:formData.issues,prescription:formData.prescription,suggestions:formData.suggestions}
     try {
-        const response = await fetch("http://localhost:3001/appointment-record/send/End-session-record", {
+        const response = await fetch(`${API_URL}/appointment-record/send/End-session-record`, {
           method: "POST",
           body: JSON.stringify(newFormData),
           headers: {
