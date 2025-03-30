@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { auth } from "../../firebase/firebase-config";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const FilterComponent = ({ onFilter}) => {
   const [filters, setFilters] = useState({
     search: "",
@@ -14,7 +14,7 @@ const FilterComponent = ({ onFilter}) => {
   //api call should be done here data will be from here
   const getDoctorinfo=async ()=>{
     try {
-      const response = await fetch("http://localhost:3001/doctor-appointment/getAll/doctor", {
+      const response = await fetch(`${API_URL}/doctor-appointment/getAll/doctor`, {
         method: "GET", // Change to GET
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const FilterComponent = ({ onFilter}) => {
         throw new Error(`Error: ${response.status} - ${response.statusText}`);
       }
       const docsdata = await response.json();
-      const response2 = await fetch(`http://localhost:3001/doctor-appointment/get/doctor-key-details`, {
+      const response2 = await fetch(`${API_URL}/doctor-appointment/get/doctor-key-details`, {
                 method: "GET", // Change to GET
                 headers: {
                   "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const FilterComponent = ({ onFilter}) => {
               }
             
       const keyData = await response2.json(); 
-      const response3 = await fetch(`http://localhost:3001/review-record/fetch/review`, {
+      const response3 = await fetch(`${API_URL}/review-record/fetch/review`, {
         method: "GET", // Change to GET
         headers: {
           "Content-Type": "application/json",
