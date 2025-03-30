@@ -23,7 +23,7 @@ export const PatientCard = ({ patients }) => {
     console.log("Review:", review, "Rating:", rating);
    const newData={docId:selectedPatient.docId,docname:selectedPatient.docname,docdesign:selectedPatient.docdesign,review:review,rating:rating}
     try {
-        const response = await fetch(`${API_URL/review-record/send/review`, {
+        const response = await fetch(`${API_URL}/review-record/send/review`, {
           method: "POST",
           body: JSON.stringify(newData),
           headers: {
