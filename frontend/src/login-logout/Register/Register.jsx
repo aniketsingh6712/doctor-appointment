@@ -8,7 +8,7 @@ import { faEnvelope, faLock, faUser, faPhone, faMapMarkerAlt, faCity, faGlobe, f
 import "../fake.css";
 import {auth} from "../../firebase/firebase-config";
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Register() {
     const [formData, setFormData] = useState({
 
@@ -59,7 +59,7 @@ function Register() {
       const addUserRecord = async (newFormData) => {
      
         try {
-          const response = await fetch("http://localhost:3001/doctor-appointment/user", {
+          const response = await fetch(`${API_URL}/http://localhost:3001/doctor-appointment/user`, {
             method: "POST",
             body: JSON.stringify(newFormData),
             headers: {
@@ -74,7 +74,7 @@ function Register() {
       const addDoctorRecord = async (newFormData) => {
      
         try {
-          const response = await fetch("http://localhost:3001/doctor-appointment/doctor", {
+          const response = await fetch(`${API_URL}/doctor-appointment/doctor`, {
             method: "POST",
             body: JSON.stringify(newFormData),
             headers: {
