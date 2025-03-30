@@ -5,7 +5,7 @@ import { useState ,useEffect} from 'react';
 import { auth } from '../../firebase/firebase-config';
 import {  DoctorCard } from './DoctorCard';
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 const HeroSection = () => {
   return (
     <div className="hero-container" style={{backgroundImage: `url(${"https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww"})`,
@@ -25,7 +25,7 @@ function DoctorPage() {
 
    const getDoctorinfo=async ()=>{
       try {
-        const response = await fetch("http://localhost:3001/doctor-appointment/getAll/doctor", {
+        const response = await fetch(`${API_URL}/doctor-appointment/getAll/doctor`, {
           method: "GET", // Change to GET
           headers: {
             "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DoctorPage() {
         }
       
         const docsdata = await response.json(); // Parse JSON response
-        const response2 = await fetch(`http://localhost:3001/doctor-appointment/get/doctor-key-details`, {
+        const response2 = await fetch(`${API_URL}/doctor-appointment/get/doctor-key-details`, {
           method: "GET", // Change to GET
           headers: {
             "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function DoctorPage() {
       
         const keyData = await response2.json(); 
 
-        const response3 = await fetch(`http://localhost:3001/review-record/fetch/review`, {
+        const response3 = await fetch(`${API_URL}/review-record/fetch/review`, {
           method: "GET", // Change to GET
           headers: {
             "Content-Type": "application/json",
