@@ -9,6 +9,7 @@ import "../fake.css";
 import { auth } from "../../firebase/firebase-config";
 import { useDispatch } from 'react-redux'
 import { AddUser } from '../../redux/userslicer';
+const API_URL = import.meta.env.VITE_API_URL;
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -32,7 +33,7 @@ function Login() {
   };
   const getDataFromDb = async (Db, userId) => {
     if (Db ==="doctor") {
-      const response = await fetch(`http://localhost:3001/doctor-appointment/doctor/${userId}`)
+      const response = await fetch(`${API_URL}/doctor-appointment/doctor/${userId}`)
       if (response.ok) {
         const userRecord = await response.json();
         const data={
@@ -49,7 +50,7 @@ function Login() {
       }
     }
     else if (Db ==="user") {
-      const response = await fetch(`http://localhost:3001/doctor-appointment/user/${userId}`)
+      const response = await fetch(`${API_URL}/doctor-appointment/user/${userId}`)
       if (response.ok) {
         const userRecord = await response.json();
         const data={
