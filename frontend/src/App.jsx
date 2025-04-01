@@ -27,7 +27,7 @@ function App() {
   <BrowserRouter>
 
 <Navbar/>
- <ErrorBoundary/>
+ <ErrorBoundary>
 <Routes>
 <Route exact path="/home" element={<Home/>}/>
 <Route exact path="/doctors" element={<DoctorPage/>}/>
