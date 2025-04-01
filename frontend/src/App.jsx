@@ -9,7 +9,6 @@ import DoctorPage from "./component/Doctors/DoctorPage";
 import AppointmentForm from "./component/patient form/PatientForm";
 import Login from "./login-logout/login/Login";
 import ErrorBoundary from "./ErrorBoundary";
-
 import Profile from "./component/profile/profile";
 import User_Appointment from "./appointment/user/user_appointment";
 import Doc_Appointment from "./appointment/doctor/user_appointment";
@@ -49,4 +48,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
