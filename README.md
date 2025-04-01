@@ -41,33 +41,35 @@
   ## 📁 2.Code Structure  
 
   ```sh
-    E-COMMERCE/
-    │── public/                 # Static assets
-    │
-    │ │── src/
-    │   │   ├── components/         # Reusable UI components (Button, Navbar, etc.)
-    │  │   │   ├── Account/        # Signup and Login Page
-    │  │   │   ├── Cart/           # Shopping cart components
-    │  │   │   ├── Checkout/       # Checkout components
-    │  │   │   ├── Footer/         # Footer section
-    │  │   │   ├── Home/           # Home page components
-    │  │   │   ├── Navbar/         # Navigation bar
-    │  │   │   ├── Order/          # Orders-related components
-    │  │   │   ├── ProductDetails/ # Single product details Page
-      │   │   ├── ProductsPage/   # Product listing page
-      │   ├── context/            # Context API 
-      │   │   ├── ThemeContext.js # Theme context for light/dark mode
-      │   ├── redux/              # Redux store for user and cart data
-      │   ├── ErrorBoundary/      # Handling Component-Level Errors
-      │   ├── App.jsx             # Main app entry point
-      │   ├── main.jsx            # React DOM entry point
-      │   ├── index.css           # CSS For Theme Change
-      │── .gitignore
-      │── index.html              # HTML entry point
-      │── package.json
-      │── package-lock.json
-      │── vite.config.js          # Vite configuration file
-      │── README.md               # Project documentation
+      FINANCE_TRACKER/
+      │── backend/                 # Backend API (Express.js & MongoDB)
+      │   ├── routes/              # API Routes
+      │   ├── schema/              # Mongoose Models
+      │   ├── index.js             # Server Entry Point
+      │   ├── package.json
+      │
+      │── frontend/                # Frontend (React.js)
+      │   ├── public/              # Static Assets
+      │   ├── src/
+      │   │   ├── appointment/     # Appointment Components
+      │   │   ├── component/       # Reusable UI Components
+      │   │   ├── Doctors/         # Doctor List & Details
+      │   │   ├── Home/            # Home Page
+      │   │   ├── NavBar/          # Navigation Bar
+      │   │   ├── patient-form/    # Patient Registration Form
+      │   │   ├── profile/         # User Profiles
+      │   │   ├── login-logout/
+      │   │   │   ├── login/       # Login Page
+      │   │   │   ├── Register/    # Registration Page
+      │   │   ├── pages/contact/   # Contact Us Page
+      │   │   ├── redux/           # Redux Store
+      │   │   │   ├── store.js     # Redux Store Setup
+      │   │   │   ├── userslicer.js # User Slice
+      │   │   ├── App.jsx          # Main App Component
+      │   │   ├── account.css      # Styles
+      │   │   ├── fake.css         # Styles
+      │
+      │── README.md                # Project Documentation
 
 
   ```
