@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCQUCMUYsH-MMCWHb-aJO1_JbLrRZQG5Wk",
+  apiKey: process.env.GOOGLE_API_KEY,
   authDomain: "doctor--s-appointment.firebaseapp.com",
   projectId: "doctor--s-appointment",
   storageBucket: "doctor--s-appointment.firebasestorage.app",
