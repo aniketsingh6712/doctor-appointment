@@ -8,7 +8,7 @@ import Navbar from "./component/NavBar/NavBar";
 import DoctorPage from "./component/Doctors/DoctorPage";
 import AppointmentForm from "./component/patient form/PatientForm";
 import Login from "./login-logout/login/Login";
-import ErrorBoundary from "./ErrorBoundary";
+
 
 import Profile from "./component/profile/profile";
 import User_Appointment from "./appointment/user/user_appointment";
@@ -28,7 +28,7 @@ function App() {
   <BrowserRouter>
 
 <Navbar/>
-    <ErrorBoundary>
+ 
 <Routes>
 <Route exact path="/home" element={<Home/>}/>
 <Route exact path="/doctors" element={<DoctorPage/>}/>
@@ -47,7 +47,7 @@ function App() {
 
 
 </Routes>
-    </ErrorBoundary>
+
 <Footer/>
 </BrowserRouter>
     </>
