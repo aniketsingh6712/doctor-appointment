@@ -53,16 +53,16 @@
       │   ├── src/
       │   │   ├── appointment/     # Appointment Components
       │   │   ├── component/       # Reusable UI Components
-      │   │       ├── Doctors/         # Doctor List & Details
-      │   │       ├── Home/            # Home Page
-      │   │       ├── NavBar/          # Navigation Bar
-      │   │       ├── patient-form/    # Patient Registration Form
-      │   │       ├── profile/         # User Profiles
+      │   │   │    ├── Doctors/         # Doctor List & Details
+      │   │   │    ├── Home/            # Home Page
+      │   │   │    ├── NavBar/          # Navigation Bar
+      │   │   │    ├── patient-form/    # Patient Registration Form
+      │   │   │    ├── profile/         # User Profiles
       │   │   ├── login-logout/
       │   │   │   ├── login/       # Login Page
       │   │   │   ├── Register/    # Registration Page
-      |   |   |   ├──fake.css      #styles for toggle button to choose user or doctor
-      |   |   |   ├──account.css   #styles for login and register forms
+      │   │   │   ├──fake.css      #styles for toggle button to choose user or doctor
+      │   │   │   ├──account.css   #styles for login and register forms
       │   │   ├── pages/contact/   # Contact Us Page
       │   │   ├── redux/           # Redux Store
       │   │   │   ├── store.js     # Redux Store Setup
@@ -114,11 +114,8 @@
   ## 🎨 6. UI/UX Guidelines  
 
   ### 🖼️ Design & Responsiveness  
-  - **Bootstrap** for a responsive UI.  
+  - **Bootstrap and tailwind** for a responsive UI.  
   - **External CSS stylesheets and inline styling**.  
-
-  ### 🌃 Themes  
-  - Supports **Light/Dark mode** via React Context.  
 
   ### 🖼 Screenshots  
 ![Screenshot (118)](https://github.com/user-attachments/assets/4d34213a-733f-48e7-bcfe-558460fad401)
@@ -162,48 +159,7 @@
 
  ## ✅ 8. Testing
 
-this project primarily relies on **manual testing** through `console.log()`, here’s how we debug and test functionality:
-
-### **Component Testing and Api Testing**
-
-```jsx
-    //Example
-    import { useEffect, useState } from "react";
-    import axios from "axios";
-
-    function ProductList() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        // API call to fetch products
-        axios.get("https://fakestoreapi.com/products")
-        .then((response) => {
-            console.log("Fetched Products:", response.data); 
-            setProducts(response.data);
-        })
-        .catch((error) => console.error("Error fetching products:", error));
-    }, []);
-
-    useEffect(() => {
-        console.log("Component Updated: Product List Updated", products); // Log component update
-    }, [products]);
-
-    return (
-        <div>
-        <h2>Product List</h2>
-        {products.length === 0 ? (
-            <p>Loading...</p>
-        ) : (
-            products.map((product) => (
-            <p key={product.id}>{product.title}</p>
-            ))
-        )}
-        </div>
-    );
-    }
-
-    export default ProductList;
-  ```
+this project primarily relies on **manual testing** through `console.log()`.
 
   ---
 
@@ -213,24 +169,10 @@ this project primarily relies on **manual testing** through `console.log()`, her
   ```sh
   npm run build
   ```
-  - **Netlify** for hosting.  
+  - **Vercel** for hosting.  
   - **CI/CD pipeline** via GitHub Actions.  
 
   ---
 
-  ## 🔄 10. Rollback Plan  
-
-  - **Rollback Command on GitHub:**  
-  ```sh
-  git log --oneline #identify the last stable commit
-  git revert <commit-hash> #revert to the last stable commit
-  git push origin main #push the reverted commit to gitHub
-  ```
-  - **Rollback on Netlify:**
-  
-   1.Go to Netlify Dashboard->Your Site->Deploys.\
-   2.Locate the previous successful deployment.\
-   3.Click "Publish Deploy" to make it live again.
-  
-  ---
+ 
 
