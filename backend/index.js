@@ -9,7 +9,7 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 
 app.use(express.json());
-const mongoURI = "mongodb+srv://Aniket6712:Aniket12345%40@cluster0.1szsv.mongodb.net/"; 
+const mongoURI = process.env.MONGODB_URI;
 /*
 if your password in plain-text is p@ssw0rd'9'!, you need to encode your password as:
 
