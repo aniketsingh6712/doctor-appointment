@@ -1,5 +1,5 @@
   # 🏥 MERN Doctor Appointment App
-  A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application for managing doctor appointments. Users can book appointments, doctors can manage schedules, and an admin can oversee the system.  
+  A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application for managing doctor appointments. Users can book appointments, doctors can manage schedules, and write prescriptions. 
 
   ---
 
@@ -53,21 +53,22 @@
       │   ├── src/
       │   │   ├── appointment/     # Appointment Components
       │   │   ├── component/       # Reusable UI Components
-      │   │   ├── Doctors/         # Doctor List & Details
-      │   │   ├── Home/            # Home Page
-      │   │   ├── NavBar/          # Navigation Bar
-      │   │   ├── patient-form/    # Patient Registration Form
-      │   │   ├── profile/         # User Profiles
+      │   │       ├── Doctors/         # Doctor List & Details
+      │   │       ├── Home/            # Home Page
+      │   │       ├── NavBar/          # Navigation Bar
+      │   │       ├── patient-form/    # Patient Registration Form
+      │   │       ├── profile/         # User Profiles
       │   │   ├── login-logout/
       │   │   │   ├── login/       # Login Page
       │   │   │   ├── Register/    # Registration Page
+      |   |   |   ├──fake.css      #styles for toggle button to choose user or doctor
+      |   |   |   ├──account.css   #styles for login and register forms
       │   │   ├── pages/contact/   # Contact Us Page
       │   │   ├── redux/           # Redux Store
       │   │   │   ├── store.js     # Redux Store Setup
       │   │   │   ├── userslicer.js # User Slice
       │   │   ├── App.jsx          # Main App Component
-      │   │   ├── account.css      # Styles
-      │   │   ├── fake.css         # Styles
+      │   │   ├── main.jsx        #React DOM entry Point
       │
       │── README.md                # Project Documentation
 
@@ -80,7 +81,7 @@
 
   - **File Naming:** Intialcase for folders, PascalCase for files and components.  
   - **Component Naming:** Functional components start with an uppercase letter.  
-  - **Styling:** Uses **Inline CSS, Bootstrap, and External Stylesheets**.  
+  - **Styling:** Uses **Inline CSS, Bootstrap, Tailwind, and External Stylesheets**.  
 
   ```jsx
   // Example: Button Component (components/Button.js)
@@ -95,43 +96,18 @@
 
   ## 🛋️ 4. State Management Guidelines  
 
-  - **Redux** stores **user data and cart information**.  
-  - **Product data** is fetched inside components using **Axios**.
-  - **LocalStorage** is used to store **user data,cart data and orders data**.    
-  - **Theme Context** manages **light/dark mode**.  
-
+  - **Redux** stores **user data**.  
+  - **All The other data** is stored using **MongoDb atlas**. 
   ---
 
   ## 🔌 5. API Documentation  
 
-  - **Base API URL:** `https://fakestoreapi.com/`  
+  - **Base API URL:** `http://localhost:3001/doctor-appointment` ,`http://localhost:3001/appointment-record` ,`http://localhost:3001/review-record`
   - **Endpoints Used:**  
-    - `GET /products` - Fetch all products  
-    - `GET /products/:id` - Fetch single product  
-  ```js
-  // Example API Call
-  import axios from "axios";
-  import React,{useState,useEffect} from "react";
-  export const fetchProducts=()=> {
-    const [data,setData]=useState("");
-    useEffect(()=>{
-        const fetchProducts=async ()=>{
-            try{
-            const response = await axios.get("https://fakestoreapi.com/products");
-            setData(response.data);
-            }
-            catch(err){
-                console.log(err);
-            }
-        }
-        
-    })
-    
-    return(
-        <div>{data}</div>
-    )
-  };
-  ```
+    - `POST doctor-appointment/user` -Patient login
+    - `POST doctor-appointment/doctor` -Doctor login
+
+    Other endpoints are explained in routes.
 
   ---
 
